@@ -99,7 +99,7 @@ void CPU::reset()
 
 void CPU::run_next_instruction()
 {
-    const Instruction ins = decode_instruction[memmap[PC]];
+    const Instruction ins = decode_instruction(memmap[PC]);
     uint8_t oper;
     uint16_t operAddr;
     uint8_t res;

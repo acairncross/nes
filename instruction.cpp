@@ -3,7 +3,12 @@
 
 constexpr uint8_t Instruction::modeSizes[14];
 
-const Instruction decode_instruction[256] = {
+Instruction decode_instruction(uint8_t byte)
+{
+    return _decode_instruction[byte];
+}
+
+const Instruction _decode_instruction[256] = {
     Instruction(0x00, BRK, IMPLIED),
     Instruction(0x01, ORA, INDIRECT_X),
     Instruction(0x02, BAD_TYPE, BAD_MODE),

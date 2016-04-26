@@ -126,7 +126,7 @@ void update_view(CPU& cpu,
     for (uint16_t i=0; i<=20; ++i) {
         uint16_t pc = cpu.PC + i - 10;
         uint8_t insVal = cpu.read_mem_val(pc);
-        Instruction ins = decode_instruction[insVal];
+        Instruction ins = decode_instruction(insVal);
         if (pc == cpu.PC) { wattron(mem_win, COLOR_PAIR(1)); }
         mvwprintw(mem_win, i+1, 1, "%04x: %02x %s %-17s",
                                     pc, insVal, optype_str[ins.type], addrmode_str[ins.mode]);

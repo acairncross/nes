@@ -31,6 +31,7 @@ private:
     constexpr static uint8_t modeSizes[14] = {1, 2, 2, 2, 2, 3, 3, 3, 1, 2, 3, 2, 2, 0};
 };
 
-extern const Instruction decode_instruction[256];
+Instruction decode_instruction(uint8_t);
+extern const Instruction _decode_instruction[256];
 
 #endif
